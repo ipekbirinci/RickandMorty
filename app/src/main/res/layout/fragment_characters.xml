@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backGround"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.characters.presantation.CharactersFragment">
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/backGroundItem"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Find a character here!"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/characterText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Characters"
+        android:textSize="24sp"
+        android:textColor="@color/lines"
+        android:fontFamily="@font/robotomono_bold"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_bar"/>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="4dp"
+        android:background="@color/lines"
+        app:layout_constraintBottom_toBottomOf="@id/characterText"
+        app:layout_constraintTop_toTopOf="@id/characterText"
+        app:layout_constraintStart_toEndOf="@id/characterText"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerCharacter"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+    tools:listitem="@layout/item_characters"
+    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+    app:spanCount="2"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/characterText"
+    app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

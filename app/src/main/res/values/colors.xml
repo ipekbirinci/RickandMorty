@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+        <color name="colorPrimary">#34eb7a</color>
+        <color name="colorPrimaryDark">#28a960</color>
+        <color name="colorAccent">#00d4ff</color>
+        <color name="backGround">#043b42</color>
+        <color name="lines">#c7cca4</color>
+        <color name="backGroundItem">#0c7d85</color>
+
+        <color name="backgroundColor">#121212</color>
+        <color name="surfaceColor">#1e1e1e</color>
+
+        <color name="textPrimary">#ffffff</color>
+        <color name="textSecondary">#a8a8a8</color>
+
+        <color name="rickGreen">#97ce4c</color>
+        <color name="mortyYellow">#f5e050</color>
+        <color name="portalBorder">#00ff00</color>
+        <color name="portalGlow">#4effa5</color>
+
+
+        <color name="warningColor">#ff5722</color>
+        <color name="successColor">#4caf50</color>
+        <color name="infoColor">#2196f3</color>
+
+
+</resources>
