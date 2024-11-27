@@ -23,6 +23,10 @@
             android:id="@+id/bottomNavigationView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:itemIconTint="@color/lines"
+            app:itemRippleColor="@color/backGroundItem"
+            app:itemBackground="@color/backGround"
+            app:itemTextColor="@color/lines"
             app:layout_constraintBottom_toBottomOf="parent"
             app:menu="@menu/menu" />
 
