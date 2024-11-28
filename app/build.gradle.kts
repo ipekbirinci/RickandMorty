@@ -37,8 +37,11 @@ android {
     }
 }
 
+
 dependencies {
 
+    implementation(libs.glide)
+    implementation(libs.hilt.android)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
