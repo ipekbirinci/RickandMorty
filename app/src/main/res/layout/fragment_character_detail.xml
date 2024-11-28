@@ -32,14 +32,234 @@
         app:layout_constraintTop_toTopOf="@id/nameOfCharacter"
         app:layout_goneMarginStart="20dp" />
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/characterImg"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_width="0dp"
+        android:layout_height="260dp"
+        android:padding="10dp"
         android:layout_marginTop="8dp"
+        app:strokeWidth="10dp"
+        app:strokeColor="@color/lines"
         android:scaleType="fitXY"
         android:src="@drawable/rick"
+        app:layout_constraintEnd_toEndOf="@id/linear1"
+        app:layout_constraintStart_toStartOf="@id/linear1"
         app:layout_constraintTop_toBottomOf="@id/nameOfCharacter"/>
+
+        <LinearLayout
+            android:id="@+id/linear1"
+            android:padding="10dp"
+            android:background="@drawable/detail_layout"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/characterImg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <View
+                    android:id="@+id/statusShape"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/status_shape" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status:"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/robotomono_bold"
+                    android:textColor="@color/lines"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/statusValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/robotomono_light"
+                    android:text="Dead"
+                    android:textColor="@color/lines" />
+            </LinearLayout>
+
+            <!-- Gender -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <View
+                    android:id="@+id/genderShape"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/gender_shape" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gender:"
+                    android:fontFamily="@font/robotomono_bold"
+                    android:textColor="@color/lines"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:textSize="16sp"
+                    android:fontFamily="@font/robotomono_light"
+                    android:textColor="@color/lines"
+                    android:id="@+id/genderValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male"
+                   />
+            </LinearLayout>
+
+            <!-- Species -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Species:"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/robotomono_bold"
+                    android:textColor="@color/lines"                    android:textStyle="bold"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/speciesValue"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/robotomono_light"
+                    android:textColor="@color/lines"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Alien"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Type:"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/robotomono_bold"
+                    android:textColor="@color/lines"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/typeValue"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/robotomono_light"
+                    android:textColor="@color/lines"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Zombodian"
+                     />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Location:"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/robotomono_bold"
+                    android:textColor="@color/lines"                    android:textStyle="bold"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/locationValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/robotomono_light"
+                    android:textColor="@color/lines"
+                    android:text="Nuptia 4"
+                 />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Episodes:"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/robotomono_bold"
+                    android:textColor="@color/lines"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/episodeValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/robotomono_light"
+                    android:textColor="@color/lines"
+                    android:text="13, 18, 21"
+                     />
+            </LinearLayout>
+
+            <!-- Created -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Created:"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/robotomono_bold"
+                    android:textColor="@color/lines"                    android:textStyle="bold"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:id="@+id/createdValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/robotomono_light"
+                    android:textColor="@color/lines"
+                    android:text="2017-12-26T19:54:43.476Z"
+                     />
+            </LinearLayout>
+        </LinearLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
