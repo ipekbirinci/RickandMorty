@@ -59,7 +59,7 @@
         android:text="Characters"
         android:textSize="24sp"
         android:textColor="@color/lines"
-        android:fontFamily="@font/robotomono_bold"
+        android:fontFamily="@font/get_schwifty"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"

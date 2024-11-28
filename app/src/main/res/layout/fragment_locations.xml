@@ -1,13 +1,213 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backGround"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.locations.presentation.LocationsFragment">
-
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:id="@+id/locationsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Locations"
+        android:textSize="24sp"
+        android:textColor="@color/lines"
+        android:fontFamily="@font/get_schwifty"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-</FrameLayout>
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="4dp"
+        android:background="@color/lines"
+        app:layout_constraintBottom_toBottomOf="@id/locationsText"
+        app:layout_constraintTop_toTopOf="@id/locationsText"
+        app:layout_constraintStart_toEndOf="@id/locationsText"/>
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:padding="16dp"
+        android:background="@drawable/text_background"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@+id/locationsText"
+        android:layout_margin="8dp">
+
+        <TextView
+            android:id="@+id/locationText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Locations"
+            android:fontFamily="@font/robotomono_bold"
+            android:textColor="@color/lines"
+            android:textSize="16sp"
+            android:gravity="start"
+            android:paddingEnd="8dp" />
+
+        <TextView
+            android:id="@+id/valueText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Earth (C - 137)"
+            android:fontFamily="@font/robotomono_light"
+            android:textColor="@color/lines"
+            android:textSize="14sp"
+            android:gravity="center" />
+
+        <ImageView
+            android:id="@+id/hamburgerIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_hamburger"
+        android:layout_marginStart="8dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:padding="16dp"
+        android:background="@drawable/text_background"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@+id/linear1"
+        android:layout_margin="8dp">
+
+        <TextView
+            android:id="@+id/typeText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Type"
+            android:fontFamily="@font/robotomono_bold"
+            android:textColor="@color/lines"
+            android:textSize="16sp"
+            android:gravity="start"
+            android:paddingEnd="8dp" />
+
+        <TextView
+            android:id="@+id/typeValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Planet"
+            android:fontFamily="@font/robotomono_light"
+            android:textColor="@color/lines"
+            android:textSize="14sp"
+            android:gravity="center" />
+
+        <ImageView
+            android:id="@+id/typeIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_hamburger"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:padding="16dp"
+        android:background="@drawable/text_background"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@+id/linear2"
+        android:layout_margin="8dp">
+
+        <TextView
+            android:id="@+id/dimensionText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Dimension"
+            android:fontFamily="@font/robotomono_bold"
+            android:textColor="@color/lines"
+            android:textSize="16sp"
+            android:gravity="start"
+            android:paddingEnd="8dp" />
+
+        <TextView
+            android:id="@+id/dimensionValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Dimension C-137"
+            android:fontFamily="@font/robotomono_light"
+            android:textColor="@color/lines"
+            android:textSize="14sp"
+            android:gravity="center" />
+
+        <ImageView
+            android:id="@+id/dimensionIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_hamburger"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:padding="16dp"
+        android:background="@drawable/text_background"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@+id/linear3"
+        android:layout_margin="8dp">
+
+        <TextView
+            android:id="@+id/createdText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Created"
+            android:fontFamily="@font/robotomono_bold"
+            android:textColor="@color/lines"
+            android:textSize="16sp"
+            android:gravity="start"
+            android:paddingEnd="8dp" />
+
+        <TextView
+            android:id="@+id/createdValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Nov 10, 2017 at 7:42 AM"
+            android:fontFamily="@font/robotomono_light"
+            android:textColor="@color/lines"
+            android:textSize="14sp"
+            android:gravity="center" />
+
+        <ImageView
+            android:id="@+id/createdIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_hamburger"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="10dp"
+        android:padding="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        tools:listitem="@layout/dimension_characters"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linear4">
+
+    </androidx.recyclerview.widget.RecyclerView>
+</androidx.constraintlayout.widget.ConstraintLayout>
