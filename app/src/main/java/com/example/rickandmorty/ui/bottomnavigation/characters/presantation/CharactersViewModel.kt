@@ -1,4 +1,4 @@
-package com.example.rickandmorty.ui.characters.presantation
+package com.example.rickandmorty.ui.bottomnavigation.characters.presantation
 
 import androidx.lifecycle.ViewModel
 

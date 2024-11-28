@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/backGround"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.characters.presantation.CharactersFragment">
+    tools:context=".ui.bottomnavigation.characters.presantation.CharactersFragment">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/searchLayout"

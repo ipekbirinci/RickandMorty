@@ -1,4 +1,4 @@
-package com.example.rickandmorty.ui.locations.presentation
+package com.example.rickandmorty.ui.bottomnavigation.locations.presentation
 
 import androidx.fragment.app.viewModels
 import android.os.Bundle

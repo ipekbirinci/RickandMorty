@@ -1,4 +1,4 @@
-package com.example.rickandmorty.ui.characters.presantation
+package com.example.rickandmorty.ui.bottomnavigation.episodes.presentation
 
 import androidx.fragment.app.viewModels
 import android.os.Bundle
@@ -8,13 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.rickandmorty.R
 
-class CharactersFragment : Fragment() {
+class EpisodesFragment : Fragment() {
 
     companion object {
-        fun newInstance() = CharactersFragment()
+        fun newInstance() = EpisodesFragment()
     }
 
-    private val viewModel: CharactersViewModel by viewModels()
+    private val viewModel: EpisodesViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +26,6 @@ class CharactersFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_characters, container, false)
+        return inflater.inflate(R.layout.fragment_episodes, container, false)
     }
 }
