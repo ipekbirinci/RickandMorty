@@ -199,11 +199,12 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/locationsRv"
         android:layout_marginTop="10dp"
         android:padding="2dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        tools:listitem="@layout/dimension_characters"
+        tools:listitem="@layout/item_dimension_characters"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2"
         app:layout_constraintBottom_toBottomOf="parent"
