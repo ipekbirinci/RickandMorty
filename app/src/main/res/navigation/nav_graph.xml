@@ -19,10 +19,19 @@
         android:id="@+id/locationsFragment"
         android:name="com.example.rickandmorty.ui.bottomnavigation.locations.presentation.LocationsFragment"
         android:label="fragment_locations"
-        tools:layout="@layout/fragment_locations" />
+        tools:layout="@layout/fragment_locations" >
+        <action
+            android:id="@+id/action_locationsFragment_to_characterDetailFragment"
+            app:destination="@id/characterDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/settingsFragment2"
         android:name="com.example.rickandmorty.ui.bottomnavigation.settings.presentation.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/characterDetailFragment"
+        android:name="com.example.rickandmorty.ui.characterdetail.CharacterDetailFragment"
+        android:label="fragment_character_detail"
+        tools:layout="@layout/fragment_character_detail" />
 </navigation>
