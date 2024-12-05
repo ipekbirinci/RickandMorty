@@ -1,31 +1,47 @@
 package com.example.rickandmorty.ui.bottomnavigation.characters.presantation
 
-import androidx.fragment.app.viewModels
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.rickandmorty.R
+import com.example.rickandmorty.base.BaseFragment
+import com.example.rickandmorty.databinding.FragmentCharactersBinding
+import com.example.rickandmorty.ui.bottomnavigation.characters.data.response.Characters
+import dagger.hilt.android.AndroidEntryPoint
+@AndroidEntryPoint
+class CharactersFragment : BaseFragment<FragmentCharactersBinding, CharactersViewModel>(
+    layoutId = R.layout.fragment_characters
+) {
+    private lateinit var charactersAdapter: CharactersAdapter
 
-class CharactersFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = CharactersFragment()
+    override fun onInitDataBinding() {
+        prepareRV()
+        observeViewModel()
     }
 
-    private val viewModel: CharactersViewModel by viewModels()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // TODO: Use the ViewModel
+    private fun prepareRV() {
+        charactersAdapter =
+            CharactersAdapter(requireContext(), object : CharactersClickListener {
+                override fun characterItemClicked(model: Characters) {
+                    // Detay sayfasına geçiş yapılabilir
+                }
+            })
+        binding.recyclerCharacter.run {
+            adapter = charactersAdapter
+            layoutManager = LinearLayoutManager(context)
+        }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        return inflater.inflate(R.layout.fragment_characters, container, false)
+    override fun observeViewModel() {
+        viewModel.getCharacters().observe(viewLifecycleOwner) { response ->
+            response.forEach { charactersResponse ->
+                charactersAdapter.submitList(charactersResponse.results)
+            }
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.getCharacters()
     }
 }

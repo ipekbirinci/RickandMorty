@@ -3,18 +3,18 @@
 
     <item
         android:id="@+id/charactersFragment"
-        android:icon="@drawable/ic_characters"
+        android:icon="@drawable/selector_characters"
         android:title="@string/characters" />
     <item
         android:id="@+id/locationsFragment"
-        android:icon="@drawable/ic_location"
+        android:icon="@drawable/selector_locations"
         android:title="@string/locations" />
     <item
         android:id="@+id/episodesFragment2"
-        android:icon="@drawable/ic_episodes"
+        android:icon="@drawable/selector_episodes"
         android:title="@string/episodes" />
     <item
         android:id="@+id/settingsFragment2"
-        android:icon="@drawable/ic_settings"
+        android:icon="@drawable/selector_settings"
         android:title="@string/settings" />
 </menu>
