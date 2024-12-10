@@ -29,7 +29,7 @@ class CharactersFragment : BaseFragment<FragmentCharactersBinding, CharactersVie
             CharactersAdapter(requireContext(), object : CharactersClickListener {
                 override fun characterItemClicked(model: Characters) {
                     val action = CharactersFragmentDirections
-                        .actionCharactersFragmentToCharacterDetailFragment()
+                        .actionCharactersFragmentToCharacterDetailFragment(model.id)
                     findNavController().navigate(action)
                 }
             })
