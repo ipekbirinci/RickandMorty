@@ -6,8 +6,8 @@ import retrofit2.http.GET
 import retrofit2.http.Header
 
 interface CharactersApiService {
-    @GET("api/characters")
+    @GET("api/character")
     fun getCharacters(
-    ): io.reactivex.rxjava3.core.Observable<List<CharactersResponse>>
+    ): io.reactivex.rxjava3.core.Observable<CharactersResponse>
 
 }

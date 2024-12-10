@@ -6,6 +6,10 @@
 #   http://developer.android.com/guide/developing/tools/proguard.html
 -keepnames class androidx.navigation.fragment.NavHostFragment
 -keep class * extends androidx.fragment.app.Fragment{}
+-keep class android.content.** { *; }
+-keep class androidx.core.content.FileProvider { *; }
+-keep class **.model.** { *; }
+-keep class **.models.** { *; }
 # If your project uses WebView with JS, uncomment the following
 # and specify the fully qualified class name to the JavaScript interface
 # class:

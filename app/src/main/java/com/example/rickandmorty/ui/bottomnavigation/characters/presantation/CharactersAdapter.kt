@@ -15,7 +15,6 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.rickandmorty.R
 import com.example.rickandmorty.databinding.ItemCharactersBinding
 import com.example.rickandmorty.ui.bottomnavigation.characters.data.response.Characters
-import com.example.rickandmorty.ui.bottomnavigation.characters.presantation.CharactersClickListener
 
 class CharactersAdapter(
     val context: Context,
@@ -49,7 +48,7 @@ class CharactersAdapter(
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val currentCharacter = getItem(position)  // Artık Characters nesnesi dönecek
+        val currentCharacter = getItem(position)
         when (holder) {
             is ImageViewHolder -> holder.bindImage(currentCharacter!!)
         }
@@ -64,7 +63,7 @@ class CharactersAdapter(
                 isAlive.text = model.status
                 val placeholderColor =
                     ColorDrawable(ContextCompat.getColor(itemImage.context, R.color.lines))
-                Glide.with(itemName).load(model.url)
+                Glide.with(itemImage.context).load(model.image)
                     .placeholder(placeholderColor)
                     .transform(CenterCrop(), RoundedCorners(50)).into(itemImage)
                 this.root.setOnClickListener {

@@ -4,6 +4,7 @@ import com.example.rickandmorty.ui.bottomnavigation.characters.data.CharactersAp
 import com.example.rickandmorty.ui.bottomnavigation.characters.data.datasource.CharactersDataSource
 import com.example.rickandmorty.ui.bottomnavigation.characters.data.repo.CharactersRepository
 import com.example.rickandmorty.ui.bottomnavigation.characters.data.repo.CharactersRepositoryImpl
+import com.example.rickandmorty.ui.bottomnavigation.characters.domain.GetCharacters
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -26,4 +27,16 @@ class CharactersModule {
     @Provides
     fun provideCharactersApiService(retrofit: Retrofit): CharactersApiService =
         retrofit.create(CharactersApiService::class.java)
+
+    @Singleton
+    @Provides
+    fun provideCharactersDataSource(apiService: CharactersApiService): CharactersDataSource {
+        return CharactersDataSource(apiService)
+    }
+    @Singleton
+    @Provides
+    fun provideGetCharacters(repository: CharactersRepository): GetCharacters {
+        return GetCharacters(repository)
+    }
 }
+

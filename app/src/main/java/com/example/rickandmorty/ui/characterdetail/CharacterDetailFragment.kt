@@ -1,33 +1,44 @@
 package com.example.rickandmorty.ui.characterdetail
 
-import androidx.fragment.app.viewModels
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+
 import com.example.rickandmorty.R
+import com.example.rickandmorty.base.BaseFragment
+import com.example.rickandmorty.databinding.FragmentCharacterDetailBinding
+import com.example.rickandmorty.ui.bottomnavigation.characters.presantation.CharactersAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class CharacterDetailFragment : Fragment() {
+class CharacterDetailFragment : BaseFragment<FragmentCharacterDetailBinding, CharacterDetailViewModel>(
+    layoutId = R.layout.fragment_character_detail
+) {
+    private lateinit var charactersAdapter: CharactersAdapter
+    private lateinit var characterId: String
+    override fun onInitDataBinding() {
+        prepareRV()
+        characterId = arguments?.getString("characterId") ?: ""
 
-    companion object {
-        fun newInstance() = CharacterDetailFragment()
+        observeViewModel()
     }
 
-    private val viewModel: CharacterDetailViewModel by viewModels()
+
+    private fun prepareRV() {
+
+    }
+
+    override fun observeViewModel() {
+
+
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        showProgress()
 
-        // TODO: Use the ViewModel
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        return inflater.inflate(R.layout.fragment_character_detail, container, false)
+    override fun onResume() {
+        super.onResume()
+
     }
 }

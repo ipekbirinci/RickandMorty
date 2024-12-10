@@ -24,15 +24,13 @@ import androidx.lifecycle.ViewModelStoreOwner
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-@AndroidEntryPoint
-@Deprecated("Use BaseFragmentX")
 abstract class BaseFragment<B : ViewDataBinding, VM : BaseViewModel>(
     @LayoutRes private val layoutId: Int
 ) : Fragment(), BaseFragmentHelper {
 
     lateinit var binding: B
-
     abstract fun onInitDataBinding()
     private var isCreatedOnce = false
     private var viewModelStoreOwner: ViewModelStoreOwner? = null
@@ -185,8 +183,8 @@ abstract class BaseFragment<B : ViewDataBinding, VM : BaseViewModel>(
     private var progressDialog: BaseProgressDialog? = null
 
     open fun showProgress() {
-        //  progressDialog = BaseProgressDialog()
-        //  progressDialog?.show(childFragmentManager, "PROGRESS")
+         progressDialog = BaseProgressDialog()
+          progressDialog?.show(childFragmentManager, "PROGRESS")
     }
 
     open fun showProgressWithReference(): BaseProgressDialog? {
