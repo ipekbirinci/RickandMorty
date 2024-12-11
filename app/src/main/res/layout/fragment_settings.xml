@@ -126,7 +126,7 @@
             android:id="@+id/changeLangDesc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Change applications language"
+            android:text="Click to Change Language"
             android:layout_marginStart="20dp"
             android:textColor="@color/lines"
             android:textSize="16sp"
@@ -141,7 +141,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginEnd="20dp"
-            android:src="@drawable/ic_right"
+            android:src="@drawable/eng"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -196,16 +196,17 @@
             app:layout_constraintStart_toStartOf="parent"
             />
 
-        <ImageView
+        <Switch
             android:id="@+id/ic_right_darkmode"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="20dp"
             android:src="@drawable/ic_right"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_goneMarginStart="20dp" />
+            app:layout_goneMarginStart="20dp"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
