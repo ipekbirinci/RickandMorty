@@ -6,28 +6,65 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.addTextChangedListener
+import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.rickandmorty.R
+import com.example.rickandmorty.base.BaseFragment
+import com.example.rickandmorty.databinding.FragmentCharactersBinding
+import com.example.rickandmorty.databinding.FragmentLocationsBinding
+import com.example.rickandmorty.ui.bottomnavigation.characters.data.response.Characters
+import com.example.rickandmorty.ui.bottomnavigation.characters.presantation.CharactersAdapter
+import com.example.rickandmorty.ui.bottomnavigation.characters.presantation.CharactersClickListener
+import com.example.rickandmorty.ui.bottomnavigation.characters.presantation.CharactersFragmentDirections
+import com.example.rickandmorty.ui.bottomnavigation.characters.presantation.CharactersViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class LocationsFragment : Fragment() {
+class LocationsFragment : BaseFragment<FragmentLocationsBinding, LocationsViewModel>(
+    layoutId = R.layout.fragment_locations
+) {
+    private lateinit var locationsAdapter: LocationsAdapter
 
-    companion object {
-        fun newInstance() = LocationsFragment()
+    override fun onInitDataBinding() {
+        prepareRV()
+        observeViewModel()
     }
 
-    private val viewModel: LocationsViewModel by viewModels()
+
+    private fun prepareRV() {
+        locationsAdapter =
+            LocationsAdapter(requireContext(), object : CharactersClickListener {
+                override fun characterItemClicked(model: Characters) {
+                    val action = CharactersFragmentDirections
+                        .actionCharactersFragmentToCharacterDetailFragment(model.id)
+                    findNavController().navigate(action)
+                }
+            })
+
+        binding.locationsRv.run {
+            adapter = locationsAdapter
+            layoutManager = LinearLayoutManager(context)
+            layoutManager = GridLayoutManager(context, 2)
+        }
+    }
+
+    override fun observeViewModel() {
+        viewModel.charactersResponse.observe(viewLifecycleOwner, Observer { characters ->
+            locationsAdapter.submitList(characters.results)
+
+        })
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // TODO: Use the ViewModel
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        return inflater.inflate(R.layout.fragment_locations, container, false)
+    override fun onResume() {
+        super.onResume()
+        viewModel.getCharacters()
     }
 }
