@@ -6,28 +6,42 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.rickandmorty.R
+import com.example.rickandmorty.base.BaseFragment
+import com.example.rickandmorty.databinding.FragmentEpisodesBinding
+import com.example.rickandmorty.databinding.FragmentSettingsBinding
+import com.example.rickandmorty.ui.bottomnavigation.characters.presantation.CharactersFragmentDirections
+import com.example.rickandmorty.ui.bottomnavigation.episodes.presentation.EpisodesAdapter
+import com.example.rickandmorty.ui.bottomnavigation.episodes.presentation.EpisodesViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class SettingsFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = SettingsFragment()
+class SettingsFragment : BaseFragment<FragmentSettingsBinding, SettingsViewModel>(
+    layoutId = R.layout.fragment_settings
+) {
+    override fun onInitDataBinding() {
+        initClickListeners()
     }
 
-    private val viewModel: SettingsViewModel by viewModels()
+    private fun initClickListeners(){
+        binding.clickableFav.setOnClickListener{
+            val action = SettingsFragmentDirections
+                .actionSettingsFragment2ToFavoriteFragment()
+            findNavController().navigate(action)
+        }
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+      //  showProgress()
 
-        // TODO: Use the ViewModel
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        return inflater.inflate(R.layout.fragment_settings, container, false)
+    override fun onResume() {
+        super.onResume()
+
     }
 }
