@@ -10,6 +10,12 @@ import javax.inject.Inject
 class CharactersViewModel @Inject constructor(
     private val getCharacters: GetCharacters
 ) :BaseViewModel(){
+    val filteredCharacters = getCharacters.filteredCharactersLiveData
+
+
+    fun searchCharacters(query: String) {
+        getCharacters.search(query)
+    }
 
     val charactersResponse: LiveData<CharactersResponse> get() = getCharacters.charactersResponseLiveData
 

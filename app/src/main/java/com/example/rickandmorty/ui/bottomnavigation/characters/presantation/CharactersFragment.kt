@@ -3,6 +3,7 @@ package com.example.rickandmorty.ui.bottomnavigation.characters.presantation
 
 import android.os.Bundle
 import android.util.Log
+import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
@@ -21,6 +22,11 @@ class CharactersFragment : BaseFragment<FragmentCharactersBinding, CharactersVie
     override fun onInitDataBinding() {
         prepareRV()
         observeViewModel()
+
+        binding.searchText.addTextChangedListener { text ->
+            val query = text.toString()
+            viewModel.searchCharacters(query)
+        }
     }
 
 
@@ -42,10 +48,12 @@ class CharactersFragment : BaseFragment<FragmentCharactersBinding, CharactersVie
 
     override fun observeViewModel() {
         viewModel.charactersResponse.observe(viewLifecycleOwner, Observer { characters ->
-            Log.d("CharactersFragment", "Alınan karakterler: $characters")
                 charactersAdapter.submitList(characters.results)
 
         })
+        viewModel.filteredCharacters.observe(viewLifecycleOwner) { filteredList ->
+            charactersAdapter.submitList(filteredList)
+        }
         hideProgress()
 
     }
