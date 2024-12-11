@@ -24,13 +24,14 @@
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigationView"
+            app:labelVisibilityMode="unlabeled"
+            app:itemActiveIndicatorStyle="@null"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:itemRippleColor="@color/backGroundItem"
             app:itemBackground="@color/backGround"
             app:itemIconTint="@drawable/selector_bottom"
             app:itemTextColor="@drawable/selector_bottom"
-            app:labelVisibilityMode="labeled"
             app:layout_constraintBottom_toBottomOf="parent"
             app:menu="@menu/menu" />
 
