@@ -1,7 +1,8 @@
-package com.example.rickandmorty.ui.bottomnavigation.characters.presantation
+package com.example.rickandmorty.ui.bottomnavigation.episodes.presentation
 
 import android.content.Context
 import android.graphics.drawable.ColorDrawable
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 
@@ -13,24 +14,24 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.rickandmorty.R
-import com.example.rickandmorty.databinding.ItemCharactersBinding
-import com.example.rickandmorty.ui.bottomnavigation.characters.data.response.Characters
+import com.example.rickandmorty.databinding.ItemEpisodesBinding
+import com.example.rickandmorty.ui.bottomnavigation.characters.presantation.CharactersClickListener
+import com.example.rickandmorty.ui.bottomnavigation.episodes.data.response.EpisodeResult
 
-class CharactersAdapter(
+class EpisodesAdapter(
     val context: Context,
-    val characterClickListener: CharactersClickListener
-) : ListAdapter<Characters, RecyclerView.ViewHolder>(
-    object : DiffUtil.ItemCallback<Characters>() {
+) : ListAdapter<EpisodeResult, RecyclerView.ViewHolder>(
+    object : DiffUtil.ItemCallback<EpisodeResult>() {
         override fun areItemsTheSame(
-            oldItem: Characters,
-            newItem: Characters
+            oldItem: EpisodeResult,
+            newItem: EpisodeResult
         ): Boolean {
             return oldItem == newItem
         }
 
         override fun areContentsTheSame(
-            oldItem: Characters,
-            newItem: Characters
+            oldItem: EpisodeResult,
+            newItem: EpisodeResult
         ): Boolean {
             return oldItem == newItem
         }
@@ -39,7 +40,7 @@ class CharactersAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return ImageViewHolder(
-            ItemCharactersBinding.inflate(
+            ItemEpisodesBinding.inflate(
                 LayoutInflater.from(context),
                 parent,
                 false
@@ -54,22 +55,16 @@ class CharactersAdapter(
         }
     }
 
-    inner class ImageViewHolder(val itemBinding: ItemCharactersBinding) :
+    inner class ImageViewHolder(val itemBinding: ItemEpisodesBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
-        fun bindImage(model: Characters) {
+        fun bindImage(model: EpisodeResult) {
             itemBinding.run {
-                itemName.text = model.name
-                itemDescription.text = model.species
-                isAlive.text = model.status
-                val placeholderColor =
-                    ColorDrawable(ContextCompat.getColor(itemImage.context, R.color.lines))
-                Glide.with(itemImage.context).load(model.image)
-                    .placeholder(placeholderColor)
-                    .transform(CenterCrop(), RoundedCorners(50)).into(itemImage)
-                this.root.setOnClickListener {
-                    characterClickListener.characterItemClicked(model)
+             episode.text=model.episode
+                pilot.text=model.name
+                releaseDate.text=model.air_date
+
                 }
             }
         }
     }
-}
+
