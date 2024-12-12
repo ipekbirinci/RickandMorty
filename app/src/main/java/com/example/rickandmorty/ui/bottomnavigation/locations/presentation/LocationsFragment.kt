@@ -2,13 +2,7 @@ package com.example.rickandmorty.ui.bottomnavigation.locations.presentation
 
 import android.annotation.SuppressLint
 import android.graphics.Color
-import androidx.fragment.app.viewModels
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
@@ -17,13 +11,10 @@ import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.list.listItems
 import com.example.rickandmorty.R
 import com.example.rickandmorty.base.BaseFragment
-import com.example.rickandmorty.databinding.FragmentCharactersBinding
 import com.example.rickandmorty.databinding.FragmentLocationsBinding
 import com.example.rickandmorty.ui.bottomnavigation.characters.data.response.Characters
-import com.example.rickandmorty.ui.bottomnavigation.characters.presantation.CharactersAdapter
 import com.example.rickandmorty.ui.bottomnavigation.characters.presantation.CharactersClickListener
 import com.example.rickandmorty.ui.bottomnavigation.characters.presantation.CharactersFragmentDirections
-import com.example.rickandmorty.ui.bottomnavigation.characters.presantation.CharactersViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -68,6 +59,7 @@ class LocationsFragment : BaseFragment<FragmentLocationsBinding, LocationsViewMo
     private fun showTypeDialog(){
         MaterialDialog(requireContext()).show {
             title(text = getString(R.string.types))
+            view.setBackgroundColor(Color.parseColor("#0c7d85"))
             listItems(items = typeList) { _, _, a ->
                 binding.run {
                     typeValue.text = a.toString()
@@ -81,6 +73,7 @@ class LocationsFragment : BaseFragment<FragmentLocationsBinding, LocationsViewMo
     private fun showLocationDialog(){
         MaterialDialog(requireContext()).show {
             title(text = getString(R.string.locations))
+            view.setBackgroundColor(Color.parseColor("#0c7d85"))
             listItems(items = locationList) { _, _, a ->
                 binding.run {
                     valueText.text = a.toString()
@@ -94,6 +87,7 @@ class LocationsFragment : BaseFragment<FragmentLocationsBinding, LocationsViewMo
     private fun showCreatedDialog(){
         MaterialDialog(requireContext()).show {
             title(text = getString(R.string.locations))
+            view.setBackgroundColor(Color.parseColor("#0c7d85"))
             listItems(items = createdList) { _, _, a ->
                 binding.run {
                     createdValue.text = a.toString()
@@ -108,6 +102,7 @@ class LocationsFragment : BaseFragment<FragmentLocationsBinding, LocationsViewMo
     private fun showDimensionDialog(){
         MaterialDialog(requireContext()).show {
             title(text = getString(R.string.locations))
+            view.setBackgroundColor(Color.parseColor("#0c7d85"))
             listItems(items = dimensionList) { _, _, a ->
                 binding.run {
                     dimensionValue.text = a.toString()
