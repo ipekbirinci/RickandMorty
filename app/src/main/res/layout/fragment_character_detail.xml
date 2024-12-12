@@ -93,7 +93,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Status:"
+                    android:text="@string/fragment_character_detail_status"
                     android:textSize="16sp"
                     android:fontFamily="@font/robotomono_bold"
                     android:textColor="@color/lines"
@@ -126,7 +126,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Gender:"
+                    android:text="@string/fragment_character_Detail_gender"
                     android:fontFamily="@font/robotomono_bold"
                     android:textColor="@color/lines"
                     android:textSize="16sp"
@@ -154,7 +154,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Species:"
+                    android:text="@string/fragment_character_detail_species"
                     android:textSize="16sp"
                     android:fontFamily="@font/robotomono_bold"
                     android:textColor="@color/lines"                    android:textStyle="bold"
@@ -180,7 +180,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Type:"
+                    android:text="@string/fragment_character_detail_type"
                     android:textSize="16sp"
                     android:fontFamily="@font/robotomono_bold"
                     android:textColor="@color/lines"
@@ -207,7 +207,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Location:"
+                    android:text="@string/fragment_character_detail_location"
                     android:textSize="16sp"
                     android:fontFamily="@font/robotomono_bold"
                     android:textColor="@color/lines"                    android:textStyle="bold"
@@ -233,7 +233,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Episodes:"
+                    android:text="@string/fragment_character_detail_episodes"
                     android:textSize="16sp"
                     android:fontFamily="@font/robotomono_bold"
                     android:textColor="@color/lines"
@@ -261,7 +261,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Created:"
+                    android:text="@string/fragment_character_detail_created"
                     android:textSize="16sp"
                     android:fontFamily="@font/robotomono_bold"
                     android:textColor="@color/lines"                    android:textStyle="bold"

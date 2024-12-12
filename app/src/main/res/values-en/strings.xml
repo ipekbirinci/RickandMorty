@@ -24,5 +24,12 @@
     <string name="fragment_settings_option_3">Karanlık Temaya Geç</string>
     <string name="fragment_settings_option_3_desc">Tıklayarak Karanlık Temaya Geç</string>
     <string name="fragment_locations_title_loc">Yerler</string>
+    <string name="fragment_character_detail_status">Durum:</string>
+    <string name="fragment_character_Detail_gender">Cinsiyet:</string>
+    <string name="fragment_character_detail_species">Türü:</string>
+    <string name="fragment_character_detail_type">Cinsi:</string>
+    <string name="fragment_character_detail_location">Konum:</string>
+    <string name="fragment_character_detail_episodes">Bölüm:</string>
+    <string name="fragment_character_detail_created">Oluşturulma Tarihi:</string>
 
 </resources>

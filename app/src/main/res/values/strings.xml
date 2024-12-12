@@ -23,5 +23,12 @@
     <string name="fragment_settings_option_3">Change Dark Mode</string>
     <string name="fragment_settings_option_3_desc">Change Applications Color</string>
     <string name="fragment_locations_title_loc">Locations</string>
+    <string name="fragment_character_detail_status">Status:</string>
+    <string name="fragment_character_Detail_gender">Gender:</string>
+    <string name="fragment_character_detail_species">Species:</string>
+    <string name="fragment_character_detail_type">Type:</string>
+    <string name="fragment_character_detail_location">Location:</string>
+    <string name="fragment_character_detail_episodes">Episodes:</string>
+    <string name="fragment_character_detail_created">Created:</string>
 
 </resources>
