@@ -36,6 +36,7 @@
         app:layout_constraintStart_toEndOf="@id/locationsText"/>
     <LinearLayout
         android:id="@+id/linear1"
+        android:clickable="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -63,8 +64,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="Earth (C - 137)"
-            android:fontFamily="@font/robotomono_light"
+          android:fontFamily="@font/robotomono_light"
             android:textColor="@color/lines"
             android:textSize="14sp"
             android:gravity="center" />
@@ -78,6 +78,7 @@
     </LinearLayout>
     <LinearLayout
         android:id="@+id/linear2"
+        android:clickable="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -105,7 +106,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="Planet"
             android:fontFamily="@font/robotomono_light"
             android:textColor="@color/lines"
             android:textSize="14sp"
@@ -121,6 +121,7 @@
 
     <LinearLayout
         android:id="@+id/linear3"
+        android:clickable="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -148,7 +149,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="Dimension C-137"
             android:fontFamily="@font/robotomono_light"
             android:textColor="@color/lines"
             android:textSize="14sp"
@@ -164,6 +164,7 @@
 
     <LinearLayout
         android:id="@+id/linear4"
+        android:clickable="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -191,7 +192,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="Nov 10, 2017 at 7:42 AM"
             android:fontFamily="@font/robotomono_light"
             android:textColor="@color/lines"
             android:textSize="14sp"

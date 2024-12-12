@@ -2,7 +2,6 @@ package com.example.rickandmorty.ui.characterdetail.presentation
 
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.util.Log
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -14,7 +13,6 @@ import com.example.rickandmorty.R
 import com.example.rickandmorty.base.BaseFragment
 import com.example.rickandmorty.databinding.FragmentCharacterDetailBinding
 import com.example.rickandmorty.ui.bottomnavigation.characters.presantation.CharactersAdapter
-import com.example.rickandmorty.ui.bottomnavigation.characters.presantation.CharactersFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -53,7 +51,10 @@ class CharacterDetailFragment : BaseFragment<FragmentCharacterDetailBinding, Cha
                 speciesValue.text=characters.species
                 typeValue.text=characters.type
                 locationValue.text= characters.location.toString()
-                episodeValue.text=characters.episode.toString()
+                episodeValue.text = characters.episode.joinToString(", ") {
+                    it.substringAfterLast("/")
+                }
+
                 createdValue.text=characters.created
             }
 

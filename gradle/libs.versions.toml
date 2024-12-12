@@ -26,8 +26,10 @@ navigationFragment="2.7.7"
 legacySupportV4 = "1.0.0"
 lifecycleLivedataKtx = "2.8.7"
 lifecycleViewmodelKtx = "2.8.7"
+materiallist="3.3.0"
 [libraries]
 
+materialDialog = { group = "com.afollestad.material-dialogs", name = "core", version.ref = "materiallist" }
 
 
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
