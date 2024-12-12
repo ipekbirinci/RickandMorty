@@ -15,7 +15,7 @@
     <string name="fragment_locations_picker_1">Yerler</string>
     <string name="fragment_locations_picker_2">Cinsler</string>
     <string name="fragment_locations_picker_3">Boyutlar</string>
-    <string name="fragment_locations_picker_4">Oluşturulma</string>
+    <string name="fragment_locations_picker_4">Oluşturul</string>
     <string name="fragment_settings_title">Ayarlar</string>
     <string name="fragment_settings_option_1">Favori Karakterler</string>
     <string name="fragment_settings_option_1_desc">Favori Karakterleri Göster</string>
@@ -23,5 +23,6 @@
     <string name="fragment_settings_option_2_desc">Tıklayarak Uygulama Dili Değiştir</string>
     <string name="fragment_settings_option_3">Karanlık Temaya Geç</string>
     <string name="fragment_settings_option_3_desc">Tıklayarak Karanlık Temaya Geç</string>
+    <string name="fragment_locations_title_loc">Yerler</string>
 
 </resources>

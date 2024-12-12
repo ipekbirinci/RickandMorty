@@ -22,5 +22,6 @@
     <string name="fragment_settings_option_2_desc">Click to Change Language</string>
     <string name="fragment_settings_option_3">Change Dark Mode</string>
     <string name="fragment_settings_option_3_desc">Change Applications Color</string>
+    <string name="fragment_locations_title_loc">Locations</string>
 
 </resources>

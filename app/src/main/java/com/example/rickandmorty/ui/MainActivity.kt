@@ -1,5 +1,6 @@
 package com.example.rickandmorty.ui
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -12,6 +13,7 @@ import com.example.rickandmorty.base.BaseViewModel
 import com.example.rickandmorty.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.Locale
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -20,6 +22,8 @@ class MainActivity : AppCompatActivity() {
     private var noBackStack: Boolean = true
     private lateinit var binding: ActivityMainBinding
     private lateinit var viewModel: BaseViewModel
+    private var isEnglish = true
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,6 +59,43 @@ class MainActivity : AppCompatActivity() {
         navHostFragment.childFragmentManager.addOnBackStackChangedListener {
             noBackStack = navHostFragment.childFragmentManager.backStackEntryCount == 0
         }
+    }
+    @SuppressLint("CommitPrefEdits")
+    fun changeEnLanguage() {
+        saveLanguagePreference("en")
+        setAppLocale("en")
+        val sharedPreferences = getSharedPreferences("app_preferences", MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putBoolean("isEnglish",true)
+    }
+    @SuppressLint("CommitPrefEdits")
+    fun changeTrLanguage() {
+        saveLanguagePreference("tr")
+        setAppLocale("tr")
+        val sharedPreferences = getSharedPreferences("app_preferences", MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putBoolean("isEnglish",false)
+    }
+    fun saveLanguagePreference(languageCode: String) {
+        val sharedPreferences = getSharedPreferences("app_preferences", MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putString("language", languageCode)
+        editor.apply()
+    }
+    fun getIsEnglish(): Boolean {
+        val sharedPreferences = getSharedPreferences("app_preferences", MODE_PRIVATE)
+        return sharedPreferences.getBoolean("isEnglish", true)
+    }
+
+
+    fun setAppLocale(languageCode: String) {
+        val locale = Locale(languageCode)
+        Locale.setDefault(locale)
+
+        val config = resources.configuration
+        config.setLocale(locale)
+        resources.updateConfiguration(config, resources.displayMetrics)
+        recreate()
     }
 
     private fun changeBackgroundColor(isWhite: Boolean? = false) {
