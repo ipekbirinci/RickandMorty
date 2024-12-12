@@ -10,7 +10,6 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/backGround"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.bottomnavigation.characters.presantation.CharactersFragment">
 
     <com.google.android.material.textfield.TextInputLayout
@@ -22,7 +21,7 @@
         android:layout_marginEnd="20dp"
         android:background="@drawable/search_layout"
     android:focusableInTouchMode="true"
-    android:hint="Search Characters.."
+    android:hint="@string/fragment_characters_search_hint"
     android:textColorHint="#1A1D1F"
     android:visibility="visible"
     app:boxBackgroundMode="filled"
@@ -62,7 +61,7 @@
         android:id="@+id/characterText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Characters"
+        android:text="@string/fragment_characters_title"
         android:textSize="24sp"
         android:textColor="@color/lines"
         android:fontFamily="@font/get_schwifty"

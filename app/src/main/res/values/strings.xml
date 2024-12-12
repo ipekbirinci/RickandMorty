@@ -7,5 +7,20 @@
     <string name="splash_text">Wubba Lubba Dub Dub!</string>
 
     <string name="types">Types</string>
+    <string name="fragment_characters_search_hint">Search Characters..</string>
+    <string name="fragment_characters_title">Characters</string>
+    <string name="fragment_episodes_title">Episodes</string>
+    <string name="fragment_favorites_title">Favorites</string>
+    <string name="fragment_locations_picker_1">Locations</string>
+    <string name="fragment_locations_picker_2">Type</string>
+    <string name="fragment_locations_picker_3">Dimension</string>
+    <string name="fragment_locations_picker_4">Created</string>
+    <string name="fragment_settings_title">Settings</string>
+    <string name="fragment_settings_option_1">Favorite Characters</string>
+    <string name="fragment_settings_option_1_desc">Show Favorite Characters</string>
+    <string name="fragment_settings_option_2">Change Language</string>
+    <string name="fragment_settings_option_2_desc">Click to Change Language</string>
+    <string name="fragment_settings_option_3">Change Dark Mode</string>
+    <string name="fragment_settings_option_3_desc">Change Applications Color</string>
 
 </resources>

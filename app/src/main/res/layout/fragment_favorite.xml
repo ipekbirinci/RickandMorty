@@ -24,7 +24,7 @@
             android:id="@+id/locationsText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Favorites"
+            android:text="@string/fragment_favorites_title"
             android:textSize="24sp"
             android:textColor="@color/lines"
             android:fontFamily="@font/get_schwifty"

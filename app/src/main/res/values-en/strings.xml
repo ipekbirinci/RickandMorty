@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Rick And Morty</string>
+    <string name="characters">Karakterler</string>
+    <string name="locations">Yerler</string>
+    <string name="episodes">Bölümler</string>
+    <string name="settings">Ayarlar</string>
+    <string name="splash_text">Wubba Lubba Dub Dub!</string>
+
+    <string name="types">Cinsler</string>
+    <string name="fragment_characters_search_hint">Karakter Ara..</string>
+    <string name="fragment_characters_title">Karakterler</string>
+    <string name="fragment_episodes_title">Bölümler</string>
+    <string name="fragment_favorites_title">Favoriler</string>
+    <string name="fragment_locations_picker_1">Yerler</string>
+    <string name="fragment_locations_picker_2">Cinsler</string>
+    <string name="fragment_locations_picker_3">Boyutlar</string>
+    <string name="fragment_locations_picker_4">Oluşturulma</string>
+    <string name="fragment_settings_title">Ayarlar</string>
+    <string name="fragment_settings_option_1">Favori Karakterler</string>
+    <string name="fragment_settings_option_1_desc">Favori Karakterleri Göster</string>
+    <string name="fragment_settings_option_2">Dil Değiştir</string>
+    <string name="fragment_settings_option_2_desc">Tıklayarak Uygulama Dili Değiştir</string>
+    <string name="fragment_settings_option_3">Karanlık Temaya Geç</string>
+    <string name="fragment_settings_option_3_desc">Tıklayarak Karanlık Temaya Geç</string>
+
+</resources>
