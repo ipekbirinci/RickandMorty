@@ -53,7 +53,7 @@ class CharactersAdapter(
             is ImageViewHolder -> holder.bindImage(currentCharacter!!)
         }
     }
-
+//jenkins için deneme
     inner class ImageViewHolder(val itemBinding: ItemCharactersBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
         fun bindImage(model: Characters) {
